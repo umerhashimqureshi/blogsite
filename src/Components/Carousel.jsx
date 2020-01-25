@@ -92,7 +92,6 @@ const Carousal = props => {
           <img style={{ width: "100%", height: "auto" }} src={Burger} />
         </div>
       </Carousel>
-      ,
     </div>
   );
 };

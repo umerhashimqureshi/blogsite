@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
-import {
-  Navbar,
-  Nav
-  // NavDropdown,
-  //Form,
-  //FormControl,
-  //Button
-} from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import history from "./history";
+import Nav from "react-bootstrap/Nav";
 import "./Navb.css";
-import { Switch, message, Button } from "antd";
+import { Switch } from "antd";
 
 const Navb = props => {
-  const forOthers = "";
   // const { Search } = Input;
   const [dark, setDark] = useState(true);
   const [navColor, setNavColor] = useState("#121212");
@@ -20,7 +14,7 @@ const Navb = props => {
   const [backColor, setBackColor] = useState("black");
   useEffect(() => {
     // Update the document title using the browser API
-    document.body.style.backgroundColor = "#121212";
+    document.body.style.backgroundColor = backColor;
     document.body.style.fontFamily = "Montserrat";
   });
   function onChange(checked) {
@@ -185,7 +179,7 @@ const Navb = props => {
       collapseOnSelect
       expand="lg"
       style={{
-        backgroundColor: "black",
+        backgroundColor: navColor,
         width: "90%",
         margin: "auto",
         marginTop: 20,
@@ -221,7 +215,10 @@ const Navb = props => {
           <Nav.Link style={{ color: textColor }} href="#features">
             Profile
           </Nav.Link>
-          <Nav.Link style={{ color: textColor }} href="#pricing">
+          <Nav.Link
+            style={{ color: textColor }}
+            //href="#pricing"
+          >
             About Me
           </Nav.Link>
         </Nav>
