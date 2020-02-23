@@ -10,7 +10,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://umerhashimqureshi:uxC9Km0eLvGbugSG@blogsite-tigjx.mongodb.net/blogsite",
+    "your credentials",
     {
       useNewUrlParser: true
     }
