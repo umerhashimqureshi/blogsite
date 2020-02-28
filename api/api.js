@@ -12,10 +12,15 @@ mongoose
   .connect(
     "mongodb+srv://umerhashimqureshi:uxC9Km0eLvGbugSG@blogsite-tigjx.mongodb.net/blogsite",
     {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
     }
   )
-  .then(() => console.log("Connected to Database."));
+  .then(() => console.log("Connected to Database."))
+  .catch(err => {
+    console.log("DB Connection Error: " + err);
+  });
 
 const postSchema = new mongoose.Schema({
   title: String,

@@ -1,23 +1,19 @@
 import React, { useState } from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Redirect
-// } from "react-router-dom";
+// import { Router, Switch, Route, Redirect } from "react-router-dom";
 import ScrollAnimation from "react-animate-on-scroll";
 import { message, Button } from "antd";
 // import { bounce } from "react-animations";
 import Navb from "./Components/Navb";
 import ImageGrid from "./Components/ImageGrid";
-import history from "./Components/history";
+// import history from "./Components/history";
 import Carousal from "./Components/Carousel";
 import Footer from "./Components/Footer";
 import QuickLinks from "./Components/QuicLinks";
-import Posts from "./Components/Posts";
+import PublicPosts from "./Components/PublicPosts";
 import Form from "./Components/Form";
 import InstaCheck from "./Components/InstaCheck";
 import AdminPanel from "./Components/AdminPanel";
+import Check from "./Components/Check";
 
 function App() {
   const info = () => {
@@ -37,7 +33,6 @@ function App() {
   // console.log(clr, clr2);
 
   return (
-    // <Router>
     <ScrollAnimation
       animateIn="bounce"
       initiallyVisible={true}
@@ -50,7 +45,8 @@ function App() {
         />
         <Carousal clr={clr} clr2={clr2} />
         <QuickLinks clr={clr} clr2={clr2} />
-        <Posts clr={clr} clr2={clr2} />
+        <PublicPosts clr={clr} clr2={clr2} />
+        {/* <Check /> */}
         <Footer clr={clr} clr2={clr2} />
         {/* <div style={{ textAlign: "center", marginTop: 25 }}>
         <Button
@@ -65,14 +61,6 @@ function App() {
       </div> */}
       </ScrollAnimation>
     </ScrollAnimation>
-
-    // <Switch>
-    //   <Route to="/" />
-    //   <Route to="/adminPanel">
-    //     <AdminPanel />
-    //   </Route>
-    // </Switch>
-    // </Router>
   );
 }
 

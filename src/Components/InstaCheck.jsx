@@ -101,6 +101,7 @@ const InstaCheck = props => {
         style={{
           backgroundColor: "transparent",
           color: props.clr2,
+          backgroundColor: props.clr,
           marginTop: 5
         }}
         onClick={() => getPhoto(document.getElementById("usernameInput").value)}

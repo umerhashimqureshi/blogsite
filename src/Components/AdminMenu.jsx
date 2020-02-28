@@ -22,7 +22,7 @@ const AdminMenu = props => {
           </Link>
         </Col>
         <Col span={8} order={2}>
-          <Link>
+          <Link to="/form">
             <p style={{ color: props.clr2, marginTop: 10 }}>
               Create a New Post
             </p>

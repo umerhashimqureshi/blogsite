@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import InstaCheck from "./InstaCheck";
 import { Button, notification } from "antd";
 import "./Form.css";
@@ -41,15 +40,8 @@ const Form = props => {
       })
       .then(res => {
         console.log(res.data);
-        // history.push("/");
       });
     notification[type]({
-      className: "forBlack",
-      style: {
-        // backgroundColor: props.clr,
-        color: props.clr2,
-        background: props.clr
-      },
       message: "Success",
       description: "Blog added Successfully"
       // style: { backgroundColor: props.clr, color: props.clr2 }
@@ -182,22 +174,21 @@ const Form = props => {
         clr={props.clr}
         clr2={props.clr2}
       />
-      <Link to="/">
-        <Button
-          className="btn btn-info btn-sm"
-          style={{
-            marginTop: "10%",
-            textAlign: "center",
-            color: props.clr2,
-            width: "20%",
-            marginLeft: "40%",
-            backgroundColor: props.clr
-          }}
-          onClick={() => handleSave("success")}
-        >
-          Submit
-        </Button>
-      </Link>
+
+      <Button
+        className="btn btn-info btn-sm"
+        style={{
+          marginTop: "10%",
+          textAlign: "center",
+          color: props.clr2,
+          width: "20%",
+          marginLeft: "40%",
+          backgroundColor: props.clr
+        }}
+        onClick={() => handleSave("success")}
+      >
+        Submit
+      </Button>
     </div>
   );
 };

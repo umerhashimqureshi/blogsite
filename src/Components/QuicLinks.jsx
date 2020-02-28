@@ -1,8 +1,7 @@
 import React, { Component, useState } from "react";
 import { Row, Col, Icon } from "antd";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
-import history from "./history";
 import Fries from "../Images/Fries.png";
 
 const QuickLinks = props => {
@@ -23,8 +22,8 @@ const QuickLinks = props => {
   };
 
   const check2 = () => {
-    history.push("/adminPanel");
-    console.log(history.push("/adminPanel"));
+    props.history.push("/adminPanel");
+    console.log(props.history.push("/adminPanel"));
   };
 
   return (
@@ -74,4 +73,4 @@ const QuickLinks = props => {
   );
 };
 
-export default QuickLinks;
+export default withRouter(QuickLinks);

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navb from "./Navb";
-import Posts from "./Posts";
+import { withRouter } from "react-router-dom";
+import PostsAdmin from "./PostsAdmin";
+import ScrollAnimation from "react-animate-on-scroll";
 import AdminMenu from "./AdminMenu";
 
 const AdminPanel = () => {
@@ -18,11 +20,16 @@ const AdminPanel = () => {
 
   return (
     <div>
-      <Navb callbackFromParent={myCallback} callbackFromParent2={myCallback2} />
-      <AdminMenu clr={clr} clr2={clr2} />
-      <Posts clr={clr} clr2={clr2} />
+      <ScrollAnimation animateIn="fadeIn">
+        <Navb
+          callbackFromParent={myCallback}
+          callbackFromParent2={myCallback2}
+        />
+        <AdminMenu clr={clr} clr2={clr2} />
+        <PostsAdmin clr={clr} clr2={clr2} />
+      </ScrollAnimation>
     </div>
   );
 };
 
-export default AdminPanel;
+export default withRouter(AdminPanel);

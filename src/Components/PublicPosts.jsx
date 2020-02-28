@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Button, Icon, Popconfirm, message } from "antd";
 import Form from "./Form";
 
-const Posts = props => {
+const PublicPosts = props => {
   var postCount;
   const [post, setPost] = useState([]);
   const [blogClr, setBlogClr] = useState("black");
@@ -36,16 +36,6 @@ const Posts = props => {
       // setVal(!val);
     }
   });
-
-  const handleDelete = ID => {
-    axios
-      .delete("http://localhost:4000/delete/" + ID)
-      .then(() => console.log("Deleted!"))
-      .then(message.success("Post Deleted!"))
-      .catch(err => {
-        console.log(err);
-      });
-  };
 
   // console.log(postCount);
 
@@ -126,16 +116,6 @@ const Posts = props => {
                   >
                     Instagram
                   </a>
-                  <Popconfirm
-                    style={{ color: props.clr2, backgroundColor: props.clr }}
-                    title="Are you sure delete this task?"
-                    onConfirm={() => handleDelete(post._id)}
-                    onCancel={cancel}
-                    okText="Yes"
-                    cancelText="No"
-                  >
-                    <Button type="danger">Delete</Button>
-                  </Popconfirm>
                 </div>
               </div>
               {/* {postCount++} */}
@@ -147,4 +127,4 @@ const Posts = props => {
   );
 };
 
-export default Posts;
+export default PublicPosts;

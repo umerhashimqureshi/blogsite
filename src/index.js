@@ -1,24 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import "antd/dist/antd.css";
-import { Router, Switch, Route, Redirect } from "react-router-dom";
-import history from "./Components/history";
 import App from "./App";
+import history from "./Components/history";
 import * as serviceWorker from "./serviceWorker";
 import AdminPanel from "./Components/AdminPanel";
-import Posts from "./Components/Posts";
+import Form from "./Components/Form";
 
 ReactDOM.render(
   <Router history={history}>
-    {/* <App /> */}
     <Switch>
-      <Route to="/">
-        <App />
-      </Route>
-      <Route to="/posts">
-        <AdminPanel />
-      </Route>
+      <Route path="/" exact component={App} />
+      <Route path="/adminPanel" exact render={() => <AdminPanel />} />
+      <Route path="/form" component={Form} />
     </Switch>
   </Router>,
   document.getElementById("root")

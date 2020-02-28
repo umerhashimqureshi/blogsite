@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
-import history from "./history";
 import Nav from "react-bootstrap/Nav";
 import "./Navb.css";
 import { Switch } from "antd";
