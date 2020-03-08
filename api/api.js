@@ -3,14 +3,17 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var app = express();
+var path = require("path");
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, "client/build")));
+
 mongoose
   .connect(
-    "your credentials",
+    "mongodb+srv://umerhashimqureshi:Hassanmerabeta123@blogsite-tigjx.mongodb.net/blogsite",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
